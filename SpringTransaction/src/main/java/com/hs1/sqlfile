@@ -1,0 +1,7 @@
+create table account (
+accountno number(10),
+balance number(8)
+)
+
+insert into account values(10001,15000)
+insert into account values(10002,25000)

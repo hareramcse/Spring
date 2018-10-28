@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.1.xsd
+						http://www.springframework.org/schema/aop
+						http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+	
+	<context:annotation-config/>
+	
+	<bean id="log" class="com.hs7.LogService" />	
+	<bean id="security" class="com.hs7.SecruityService" />
+	<bean id="tx" class="com.hs7.TxService" />	
+	
+	<bean id="as" class="com.hs7.AccountService" />
+	<bean id="cs" class="com.hs7.CustomerServiceImpl" />
+	
+	<aop:config>
+		<aop:pointcut id="myPC1" expression="execution(* com.hs7.AccountService.my*(..))" />
+		<aop:pointcut id="myPC2" expression="execution(* com.hs7.AccountService.up*(..))" />
+		
+		<aop:aspect ref="log">
+			<aop:before method="logBefore" pointcut-ref="myPC1"/>
+			<aop:after-returning method="logReturning" pointcut-ref="myPC1"/>
+			<aop:after-throwing method="logThrowing" pointcut-ref="myPC1"/>
+			<aop:after method="logOk" pointcut-ref="myPC1"/>
+		</aop:aspect>
+		
+		<aop:aspect ref="security">
+			<aop:before method="verifyUser" pointcut="execution(* com.hs7.AccountService.my*(..))"/>
+		</aop:aspect>
+		
+		<aop:aspect ref="tx">
+			<aop:before method="begin" pointcut-ref="myPC1"/>
+			<aop:after-returning method="commit" pointcut-ref="myPC1"/>
+			<aop:after-throwing method="rollback" pointcut-ref="myPC1"/>
+		</aop:aspect>
+		
+	</aop:config>
+
+</beans>

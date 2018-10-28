@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.1.xsd
+						http://www.springframework.org/schema/aop
+						http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+
+	<context:annotation-config />
+
+	<bean id="ss" class="com.hs3.SecruityService" />
+	<bean id="ts" class="com.hs3.TxService" />
+	<bean id="ls" class="com.hs3.LogService" />
+
+	<bean id="mba" class="com.hs3.MyMethodBeforeAdvice" />
+	<bean id="mra" class="com.hs3.MyAfteReturningAdvice" />
+	<bean id="mta" class="com.hs3.MyThrowsAdvice" />
+
+	<bean id="asTarget" class="com.hs3.AccountService" />
+	<bean id="csTarget" class="com.hs3.CustomerServiceImpl" />
+
+	<bean id="PC1"
+		class="org.springframework.aop.aspectj.AspectJExpressionPointcut">
+		<property name="expression" value="execution(* com.hs3.AccountService.my*(..))" />
+	</bean>
+
+	<bean name="MBAdvisor1"
+		class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="mba" />
+		<property name="pointcut" ref="PC1" />
+	</bean>
+
+	<bean name="MRAdvisor1"
+		class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="mra" />
+		<property name="pointcut" ref="PC1" />
+	</bean>
+
+	<bean name="MTAdvisor1"
+		class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="mta" />
+		<property name="pointcut" ref="PC1" />
+	</bean>
+
+	<bean id="asProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="targetClass" value="com.hs3.AccountService" />
+		<property name="target" ref="asTarget" />
+		<property name="interceptorNames">
+			<list>
+				<value>MBAdvisor1</value>
+				<value>MRAdvisor1</value>
+				<value>MTAdvisor1</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="PC2"
+		class="org.springframework.aop.aspectj.AspectJExpressionPointcut">
+		<property name="expression"
+			value="execution(* com.hs3.CustomerService.update*(..))" />
+	</bean>
+
+	<bean name="MBAdvisor2"
+		class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="mba" />
+		<property name="pointcut" ref="PC2" />
+	</bean>
+
+	<bean name="MRAdvisor2"
+		class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="mra" />
+		<property name="pointcut" ref="PC2" />
+	</bean>
+
+	<bean name="MTAdvisor2"
+		class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="mta" />
+		<property name="pointcut" ref="PC2" />
+	</bean>
+
+	<bean id="csProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces" value="com.hs3.CustomerService" />
+		<property name="target" ref="csTarget" />
+		<property name="interceptorNames">
+			<list>
+				<value>MBAdvisor2</value>
+				<value>MRAdvisor2</value>
+				<value>MTAdvisor2</value>
+			</list>
+		</property>
+	</bean>
+</beans>

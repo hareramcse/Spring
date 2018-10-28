@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://benchresources.in/cdm/Book" xmlns:tns="http://benchresources.in/cdm/Book"
+	elementFormDefault="qualified">
+
+	<!-- book object with four attributes -->
+	<xsd:element name="BookType">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="bookId" type="xsd:int" />
+				<xsd:element name="bookName" type="xsd:string" />
+				<xsd:element name="author" type="xsd:string" />
+				<xsd:element name="category" type="xsd:string" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- an object to contain lists of books referencing above Book object -->
+	<xsd:element name="BookListType">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="tns:BookType" minOccurs="0" maxOccurs="unbounded" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+						http://www.springframework.org/schema/context
+						http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	
+	<context:annotation-config/>
+	
+	<bean id="ss" class="com.hs1.SecruityService" />
+	<bean id="ts" class="com.hs1.TxService" />
+	<bean id="ls" class="com.hs1.LogService" />
+	
+	<bean id="mba" class="com.hs1.MyBeforeAdvice" />
+	<bean id="mra" class="com.hs1.MyAfterReturningAdvice" />
+	<bean id="mta" class="com.hs1.MyThrowsAdvice" />
+	
+	<bean id="asTarget" class="com.hs1.AccountService" />
+	<bean id="csTarget" class="com.hs1.CustomerServiceImpl" />
+	
+	<bean id="baseProxy" class="org.springframework.aop.framework.ProxyFactoryBean" abstract="true">
+		<property name="interceptorNames">
+			<list>
+				<value>mba</value>
+				<value>mra</value>
+				<value>mta</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="asProxy" parent="baseProxy">
+		<property name="targetClass" value="com.hs1.AccountService" />
+		<property name="target" ref="asTarget" />
+	</bean>
+	
+	<bean id="csProxy" parent="baseProxy">
+		<property name="proxyInterfaces" value="com.hs1.CustomerService" />
+		<property name="target" ref="csTarget" />
+	</bean>
+</beans>
