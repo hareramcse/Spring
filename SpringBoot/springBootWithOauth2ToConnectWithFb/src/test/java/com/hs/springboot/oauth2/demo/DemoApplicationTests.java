@@ -1,4 +1,4 @@
-package com.talk2amareswaran.projects.demo;
+package com.hs.springboot.oauth2.demo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
