@@ -1,6 +1,0 @@
-spring:
-    application:
-        name: two-factor-service
-        
-server:
-  port: 8000
