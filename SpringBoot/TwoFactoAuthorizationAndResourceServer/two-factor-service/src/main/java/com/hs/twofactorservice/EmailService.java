@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 public class EmailService {
 
 	private static final String username = "harerambgcs@gmail.com";
-	private static final String password = "H$roks.89";
+	private static final String password = "Password";
 
 	public boolean sendEmail(String emailid, String twoFaCode) throws AddressException, MessagingException {
 		Properties props = new Properties();
