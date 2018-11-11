@@ -1,4 +1,4 @@
-package com.talk2amareswaran.projects.webapp;
+package com.hs.webapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

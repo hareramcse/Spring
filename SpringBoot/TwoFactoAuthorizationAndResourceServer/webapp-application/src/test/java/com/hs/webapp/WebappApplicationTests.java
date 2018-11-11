@@ -1,4 +1,4 @@
-package com.talk2amareswaran.projects.webapp;
+package com.hs.webapp;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
