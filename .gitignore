@@ -28,6 +28,7 @@
 .metadata
 bin/
 tmp/
+*target/
 *.tmp
 *.bak
 *.swp
@@ -36,6 +37,8 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+.classpath
+.project
 
 # System Files
 .DS_Store
