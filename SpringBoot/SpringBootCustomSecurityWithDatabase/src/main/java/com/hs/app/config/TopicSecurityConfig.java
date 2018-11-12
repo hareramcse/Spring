@@ -23,7 +23,7 @@ public class TopicSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().antMatchers("/user/**").hasAnyRole("ADMIN", "USER").and().httpBasic()
+		http.csrf().disable().authorizeRequests().antMatchers("/*/**").hasAnyRole("ADMIN", "USER").and().httpBasic()
 				.realmName("Topic security application Realm").authenticationEntryPoint(topicAuthenticationEntryPoint);
 		http.headers().frameOptions().disable();
 	}
