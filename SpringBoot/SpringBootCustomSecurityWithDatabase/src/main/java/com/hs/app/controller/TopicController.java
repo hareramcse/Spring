@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -20,25 +19,24 @@ import com.hs.app.entities.Topic;
 import com.hs.app.service.TopicService;
 
 @RestController
-@RequestMapping("/user")
 public class TopicController {
 
 	@Autowired
 	private TopicService topicService;
 
-	@GetMapping("/topic/{id}")
+	@GetMapping("/getToopic/{id}")
 	public ResponseEntity<Topic> getTopicById(@PathVariable("id") Integer id) {
 		Topic topic = topicService.getTopicById(id);
 		return new ResponseEntity<Topic>(topic, HttpStatus.OK);
 	}
 
-	@GetMapping("/topics")
+	@GetMapping("/showAllTopics")
 	public ResponseEntity<List<Topic>> getAllTopics() {
 		List<Topic> list = topicService.getAllTopics();
 		return new ResponseEntity<List<Topic>>(list, HttpStatus.OK);
 	}
 
-	@PostMapping("/topic")
+	@PostMapping("/addTopic")
 	public ResponseEntity<String> addTopic(@RequestBody Topic topic, UriComponentsBuilder builder) {
 		boolean flag = topicService.addTopic(topic);
 		if (flag == false) {
@@ -49,13 +47,13 @@ public class TopicController {
 		return new ResponseEntity<String>(headers, HttpStatus.CREATED);
 	}
 
-	@PutMapping("/topic")
+	@PutMapping("/updateTopic")
 	public ResponseEntity<Topic> updateTopic(@RequestBody Topic topic) {
 		topicService.updateTopic(topic);
 		return new ResponseEntity<Topic>(topic, HttpStatus.OK);
 	}
 
-	@DeleteMapping("/topic/{id}")
+	@DeleteMapping("/deleteTopic/{id}")
 	public ResponseEntity<Void> deleteTopic(@PathVariable("id") Integer id) {
 		topicService.deleteTopic(id);
 		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);

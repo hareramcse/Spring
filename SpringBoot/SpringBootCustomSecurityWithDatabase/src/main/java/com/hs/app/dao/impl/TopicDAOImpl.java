@@ -58,8 +58,8 @@ public class TopicDAOImpl implements TopicDAO {
 
 	@Override
 	public boolean topicExists(String title, String category) {
-		String hql = "FROM Topic as t WHERE t.title = ? and t.category = ?";
-		int count = entityManager.createQuery(hql).setParameter(1, title).setParameter(2, category).getResultList()
+		String hql = "FROM Topic as t WHERE t.title = :title and t.category = :category";
+		int count = entityManager.createQuery(hql).setParameter("title", title).setParameter("category", category).getResultList()
 				.size();
 		return count > 0 ? true : false;
 	}

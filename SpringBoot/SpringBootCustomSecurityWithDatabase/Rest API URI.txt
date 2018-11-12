@@ -1,22 +1,22 @@
 getTopicById
-http://localhost:7000/user/topic/{id}
-http://localhost:7000/user/topic/1
+http://localhost:7000/topic/{id}
+http://localhost:7000/topic/1
 
 ----------------------------------------------------------------------------
 getAllTopics
-http://localhost:7000/user/topics
+http://localhost:7000/showAllTopics
 
 -----------------------------------------------------------------------------
 addTopic
-http://localhost:7000/user/topic
+http://localhost:7000/addTopic
 {"title":"Restful web services","category":"Java"}
 
 -----------------------------------------------------------------------------
 updateTopic
-http://localhost:7000/user/topic
+http://localhost:7000/updateTopic
 {"topicId":4,"title":"Restful web services","category":"Java webService"}
 
 -----------------------------------------------------------------------------
 deleteTopic
-http://localhost:7000/user/topic/{id}
-http://localhost:7000/user/topic/1
+http://localhost:7000/deleteTopic/{id}
+http://localhost:7000/deleteTopic/1
