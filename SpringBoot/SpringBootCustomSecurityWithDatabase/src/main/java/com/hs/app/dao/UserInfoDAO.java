@@ -1,6 +1,6 @@
-package com.infotech.app.dao;
+package com.hs.app.dao;
 
-import com.infotech.app.entities.UserInfo;
+import com.hs.app.entities.UserInfo;
 
 public interface UserInfoDAO {
 	public abstract UserInfo getActiveUser(String userName);

@@ -1,4 +1,4 @@
-package com.infotech.app.controller;
+package com.hs.app.controller;
 
 import java.util.List;
 
@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.infotech.app.entities.Topic;
-import com.infotech.app.service.TopicService;
+import com.hs.app.entities.Topic;
+import com.hs.app.service.TopicService;
 
 @RestController
 @RequestMapping("/user")

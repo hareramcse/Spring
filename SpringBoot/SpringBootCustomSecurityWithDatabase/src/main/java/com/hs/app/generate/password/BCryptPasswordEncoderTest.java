@@ -1,4 +1,4 @@
-package com.infotech.app.generate.password;
+package com.hs.app.generate.password;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

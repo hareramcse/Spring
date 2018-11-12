@@ -1,4 +1,4 @@
-package com.infotech.app.service.impl;
+package com.hs.app.service.impl;
 
 import java.util.Arrays;
 
@@ -11,8 +11,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.infotech.app.dao.UserInfoDAO;
-import com.infotech.app.entities.UserInfo;
+import com.hs.app.dao.UserInfoDAO;
+import com.hs.app.entities.UserInfo;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

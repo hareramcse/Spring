@@ -1,13 +1,13 @@
-package com.infotech.app.service.impl;
+package com.hs.app.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.infotech.app.dao.TopicDAO;
-import com.infotech.app.entities.Topic;
-import com.infotech.app.service.TopicService;
+import com.hs.app.dao.TopicDAO;
+import com.hs.app.entities.Topic;
+import com.hs.app.service.TopicService;
 
 @Service
 public class TopicServiceImpl implements TopicService {

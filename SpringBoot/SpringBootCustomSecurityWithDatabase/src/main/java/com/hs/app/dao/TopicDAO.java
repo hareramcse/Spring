@@ -1,8 +1,8 @@
-package com.infotech.app.dao;
+package com.hs.app.dao;
 
 import java.util.List;
 
-import com.infotech.app.entities.Topic;
+import com.hs.app.entities.Topic;
 
 public interface TopicDAO {
 	public abstract List<Topic> getAllTopics();

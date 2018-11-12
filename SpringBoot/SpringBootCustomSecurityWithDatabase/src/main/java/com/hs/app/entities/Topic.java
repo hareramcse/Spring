@@ -1,4 +1,4 @@
-package com.infotech.app.entities;
+package com.hs.app.entities;
 
 import java.io.Serializable;
 

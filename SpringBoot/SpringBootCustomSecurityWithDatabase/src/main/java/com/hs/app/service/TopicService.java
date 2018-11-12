@@ -1,10 +1,10 @@
-package com.infotech.app.service;
+package com.hs.app.service;
 
 import java.util.List;
 
 import org.springframework.security.access.annotation.Secured;
 
-import com.infotech.app.entities.Topic;
+import com.hs.app.entities.Topic;
 
 public interface TopicService {
 

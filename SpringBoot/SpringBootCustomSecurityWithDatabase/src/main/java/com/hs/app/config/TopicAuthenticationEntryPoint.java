@@ -1,4 +1,4 @@
-package com.infotech.app.config;
+package com.hs.app.config;
 
 import java.io.IOException;
 

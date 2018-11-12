@@ -1,4 +1,4 @@
-package com.infotech.app.dao.impl;
+package com.hs.app.dao.impl;
 
 import java.util.List;
 
@@ -8,8 +8,8 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.infotech.app.dao.UserInfoDAO;
-import com.infotech.app.entities.UserInfo;
+import com.hs.app.dao.UserInfoDAO;
+import com.hs.app.entities.UserInfo;
 
 @Repository
 @Transactional
