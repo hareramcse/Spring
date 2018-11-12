@@ -20,9 +20,8 @@ public class UserInfoDAOImpl implements UserInfoDAO {
 
 	public UserInfo getActiveUser(String userName) {
 		UserInfo userInfo = new UserInfo();
-		short ENABLED = 1;
-		List<?> list = entityManager.createQuery("SELECT u FROM UserInfo u WHERE userName=? and enabled=?")
-				.setParameter(1, userName).setParameter(2, ENABLED).getResultList();
+		List<?> list = entityManager.createQuery("SELECT u FROM UserInfo u WHERE u.userName=:userName and u.enabled='Y'")
+				.setParameter("userName", userName).getResultList();
 		if (!list.isEmpty()) {
 			userInfo = (UserInfo) list.get(0);
 		}

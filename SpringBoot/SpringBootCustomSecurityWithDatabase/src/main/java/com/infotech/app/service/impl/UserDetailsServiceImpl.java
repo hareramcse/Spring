@@ -16,7 +16,7 @@ import com.infotech.app.entities.UserInfo;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
-	
+
 	@Autowired
 	private UserInfoDAO userInfoDAO;
 
@@ -24,10 +24,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 		UserInfo userInfo = userInfoDAO.getActiveUser(userName);
 		GrantedAuthority authority = new SimpleGrantedAuthority(userInfo.getRole());
-		
-		User user = new User(userInfo.getUserName(),userInfo.getPassword(),Arrays.asList(authority));
-		
-		UserDetails userDetails = (UserDetails)user; 
+
+		User user = new User(userInfo.getUserName(), userInfo.getPassword(), Arrays.asList(authority));
+
+		UserDetails userDetails = (UserDetails) user;
 		return userDetails;
 	}
 }
