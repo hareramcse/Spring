@@ -17,9 +17,9 @@ public class BookDAO {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
-	@Cacheable(value="languages")
+	@Cacheable(value = "languages")
 	public List<String> getSupportedLanguages() {
-		System.out.println("Fetching from the database table..."+new Date());
+		System.out.println("Fetching from the database table..." + new Date());
 		List<String> languages = new ArrayList<>();
 		String sql = "SELECT LANGUAGE FROM LANGUAGES";
 		Collection<Map<String, Object>> rows = jdbcTemplate.queryForList(sql);

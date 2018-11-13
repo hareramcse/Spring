@@ -1,3 +1,15 @@
 spring:
   application:
       name: cachemanageapp
+      
+  h2:
+    console:
+      enabled: true
+      path: /h2
+      settings:
+        trace: true
+      
+server:
+  port: 7000
+  
+  

@@ -22,9 +22,9 @@ public class BookRestController {
 		}
 		return list;
 	}
-	
-	@RequestMapping(value="/cache")
-	@CacheEvict(value="languages", allEntries=true)
+
+	@RequestMapping(value = "/cache")
+	@CacheEvict(value = "languages", allEntries = true)
 	public String clearCache() {
 		return "Cache is cleared successfully";
 	}

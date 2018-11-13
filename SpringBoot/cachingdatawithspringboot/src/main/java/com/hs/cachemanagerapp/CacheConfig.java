@@ -25,7 +25,8 @@ public class CacheConfig implements CachingConfigurer {
 	@Override
 	public CacheManager cacheManager() {
 		SimpleCacheManager cacheManager = new SimpleCacheManager();
-		GuavaCache guavaCache = new GuavaCache("languages", CacheBuilder.newBuilder().expireAfterWrite(1, TimeUnit.MINUTES).build());
+		GuavaCache guavaCache = new GuavaCache("languages",
+				CacheBuilder.newBuilder().expireAfterWrite(1, TimeUnit.MINUTES).build());
 		cacheManager.setCaches(Arrays.asList(guavaCache));
 		return cacheManager;
 	}
