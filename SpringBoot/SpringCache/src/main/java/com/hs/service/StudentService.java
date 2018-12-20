@@ -11,7 +11,7 @@ public class StudentService {
 	@Cacheable("student")
 	public Student getStudentByID(String id) {
 		try {
-			Thread.sleep(1000 * 5);
+			Thread.sleep(1000 * 10);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

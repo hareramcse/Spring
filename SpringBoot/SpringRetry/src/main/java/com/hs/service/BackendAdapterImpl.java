@@ -1,8 +1,10 @@
-package com.hs;
+package com.hs.service;
 
 import java.util.Random;
 
 import org.springframework.stereotype.Service;
+
+import com.hs.exception.RemoteServiceNotAvailableException;
 
 @Service
 public class BackendAdapterImpl implements BackendAdapter {

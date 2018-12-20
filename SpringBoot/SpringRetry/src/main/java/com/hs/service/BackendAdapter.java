@@ -1,8 +1,10 @@
-package com.hs;
+package com.hs.service;
 
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Recover;
 import org.springframework.retry.annotation.Retryable;
+
+import com.hs.exception.RemoteServiceNotAvailableException;
 
 public interface BackendAdapter {
 

@@ -1,4 +1,4 @@
-package com.hs;
+package com.hs.exception;
 
 public class RemoteServiceNotAvailableException extends RuntimeException {
 
