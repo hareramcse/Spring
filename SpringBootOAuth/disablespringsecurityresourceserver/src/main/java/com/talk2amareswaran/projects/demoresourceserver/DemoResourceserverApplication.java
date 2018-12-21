@@ -16,7 +16,6 @@ public class DemoResourceserverApplication {
 		SpringApplication.run(DemoResourceserverApplication.class, args);
 	}
 	
-	
 	@RequestMapping(value="/api")
 	@PreAuthorize("hasRole('SYSTEMADMIN')")
 	public String success() {

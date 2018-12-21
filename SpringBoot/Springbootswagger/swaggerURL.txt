@@ -1,0 +1,3 @@
+run this URL to get the swagger UI
+
+http://localhost:7070/swagger-ui.html

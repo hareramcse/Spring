@@ -1,5 +1,5 @@
 server:
-  port: 8000
+  port: 7000
 security:
     oauth2:
         resource:
