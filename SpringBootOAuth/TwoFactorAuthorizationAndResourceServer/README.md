@@ -4,8 +4,9 @@ Spring Boot OAuth2 Security with h2, JWT, Bootstrap4 and JQuery
 Steps:
 
 Authorization server:
-give clientid and clientsecret as username and password in Basic authorization section
-Body section select x-www-form-urlencoded and put username, password, grant_type as key and william_j@gmail.com, WilliamJohn, password as value
+give clientid and clientsecret as username and password in Basic authorization section, and in Body section select x-www-form-urlencoded and put username, password, grant_type as key and william_j@gmail.com, WilliamJohn, password as value respectivally.
+
+PUT --> localhost:7000/oauth/token   get the access token
 
 in the response we get access_token, copy it it will be used to access the resource
 
@@ -14,7 +15,6 @@ Header take Authorization as key and Bearer <access-token> as value and the rest
 
 openssl genrsa -out jwt.pem 2048  
 openssl rsa -in jwt.pem : to generate private key from jwt.pem file
-
 openssl rsa -in jwt.pem -pubout
 
 
