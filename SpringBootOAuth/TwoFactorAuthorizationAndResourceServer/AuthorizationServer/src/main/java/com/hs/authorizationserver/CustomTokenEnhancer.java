@@ -30,6 +30,8 @@ public class CustomTokenEnhancer extends JwtAccessTokenConverter {
 			info.put("is_tfa_enabled", user.getIs_tfa_enabled());
 		if (user.getTfa_default_type() != null)
 			info.put("tfa_default_type", user.getTfa_default_type());
+		if (user.getUsername() != null)
+			info.put("email_id", user.getUsername());
 
 		DefaultOAuth2AccessToken customAccessToken = new DefaultOAuth2AccessToken(accessToken);
 		customAccessToken.setAdditionalInformation(info);
