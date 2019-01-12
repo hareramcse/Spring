@@ -18,11 +18,11 @@ public class SpringKafkaDemoApplication {
 	
 	@RequestMapping(value="/produce", method=RequestMethod.GET)
 	public String produceKafkaMessage() {
-		kafkaTemplate.send("messenger", "This message is coming from Producer - Hello Kafka");
+		kafkaTemplate.send("first_topic", "This message is coming from Producer - Hello Kafka");
 		return "Message succcessfully Produced to Kafka";
 	}
 	
-	@KafkaListener(topics="messenger", group="group-id")
+	@KafkaListener(topics="first-topic")
 	public void kafkaListener1(String message) {
 		System.out.println("Message received from Producer to Consumer");
 		System.out.println(message);

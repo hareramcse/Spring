@@ -28,37 +28,36 @@ public class AsyncService {
 	}
 
 	@Async("asyncExecutor")
-	public CompletableFuture<EmployeeNames> getEmployeeName() throws InterruptedException 
-	{
+	public CompletableFuture<EmployeeNames> getEmployeeName() throws InterruptedException {
 		log.info("getEmployeeName Starts");
 		EmployeeNames employeeNameData = restTemplate.getForObject("http://localhost:8082/names", EmployeeNames.class);
 
 		log.info("employeeNameData, {}", employeeNameData);
-		Thread.sleep(1000L);	//Intentional delay
+		Thread.sleep(1000L); // Intentional delay
 		log.info("employeeNameData completed");
 		return CompletableFuture.completedFuture(employeeNameData);
 	}
 
 	@Async("asyncExecutor")
-	public CompletableFuture<EmployeeAddresses> getEmployeeAddress() throws InterruptedException 
-	{
+	public CompletableFuture<EmployeeAddresses> getEmployeeAddress() throws InterruptedException {
 		log.info("getEmployeeAddress Starts");
-		EmployeeAddresses employeeAddressData = restTemplate.getForObject("http://localhost:8082/addresses", EmployeeAddresses.class);
+		EmployeeAddresses employeeAddressData = restTemplate.getForObject("http://localhost:8082/addresses",
+				EmployeeAddresses.class);
 
 		log.info("employeeAddressData, {}", employeeAddressData);
-		Thread.sleep(1000L);	//Intentional delay
+		Thread.sleep(1000L); // Intentional delay
 		log.info("employeeAddressData completed");
 		return CompletableFuture.completedFuture(employeeAddressData);
 	}
 
 	@Async("asyncExecutor")
-	public CompletableFuture<EmployeePhone> getEmployeePhone() throws InterruptedException 
-	{
+	public CompletableFuture<EmployeePhone> getEmployeePhone() throws InterruptedException {
 		log.info("getEmployeePhone Starts");
-		EmployeePhone employeePhoneData = restTemplate.getForObject("http://localhost:8082/phones", EmployeePhone.class);
+		EmployeePhone employeePhoneData = restTemplate.getForObject("http://localhost:8082/phones",
+				EmployeePhone.class);
 
 		log.info("employeePhoneData, {}", employeePhoneData);
-		Thread.sleep(1000L);	//Intentional delay
+		Thread.sleep(1000L); // Intentional delay
 		log.info("employeePhoneData completed");
 		return CompletableFuture.completedFuture(employeePhoneData);
 	}

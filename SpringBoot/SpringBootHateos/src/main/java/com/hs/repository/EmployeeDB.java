@@ -11,9 +11,9 @@ public class EmployeeDB {
     {
         List<EmployeeVO> list = new ArrayList<>();
  
-        EmployeeVO empOne = new EmployeeVO(1, "Lokesh", "Gupta", "howtodoinjava@gmail.com");
-        EmployeeVO empTwo = new EmployeeVO(2, "Amit", "Singhal", "asinghal@yahoo.com");
-        EmployeeVO empThree = new EmployeeVO(3, "Kirti", "Mishra", "kmishra@gmail.com");
+        EmployeeVO empOne = new EmployeeVO(1, "Hareram", "Singh", "hareramsingh@gmail.com");
+        EmployeeVO empTwo = new EmployeeVO(2, "Raghuraj", "Singh", "raghurajsingh@yahoo.com");
+        EmployeeVO empThree = new EmployeeVO(3, "Tanmay", "Singh", "tanmaysingh@gmail.com");
  
         list.add(empOne);
         list.add(empTwo);
