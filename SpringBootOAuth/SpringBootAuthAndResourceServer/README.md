@@ -10,15 +10,16 @@ Steps:
 
 Authorization server: go to Authorization - -> select Basic Auth - > give clientid and clientsecret(given in application.yml file) as username and password in Basic authorization, and in Body section select x-www-form-urlencoded and put username=william_j@gmail.com, password=WilliamJohn, and grant_type=password.
 
-hit the URL PUT --> localhost:7000/oauth/token get the access token
+hit the URL POST --> localhost:7000/oauth/token get the access token
 
 Now run the Resource Server
 
-Resource server: in the application.yml file jwt: key-value:put the public key which we have already generated once the resource server is up and running then access the bellow URL GET - > localhost:8000/users GET - > localhost:8000/roles GET - > localhost:8000/permission
+Resource server: in the application.yml file there is label jwt: key-value:
+here put the public key which we have already generated. once the resource server is up and running access the bellow URL GET - > localhost:8000/users GET - > localhost:8000/roles GET - > localhost:8000/permission
 
 here we will get the full authentication error.
 
-for this go to Header - > Authorization as key and Bearer
+for this go to Header - > put Authorization as key and in value Bearer <access-token>
 
 now hit the URL GET - > localhost:8000/users GET - > localhost:8000/roles GET - > localhost:8000/permission
 
