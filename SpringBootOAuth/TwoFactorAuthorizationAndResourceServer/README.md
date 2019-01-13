@@ -13,7 +13,7 @@ Authorization server:
 go to Authorization - -> select Basic Auth - > give clientid and clientsecret(given in application.yml file) as username and password in Basic authorization, and in Body section select x-www-form-urlencoded and put username=harerambgcs@gmail.com, password=<passwordofemail>, and grant_type=password.
 
 hit the URL 
-PUT --> localhost:6000/oauth/token   get the access token
+POST --> localhost:6000/oauth/token   get the access token
 
 Now run the Resource Server
 
@@ -40,7 +40,7 @@ now run the two factor authentication application and hit the url http://localho
 it will generate the otp and will send it to email provided on the above email.
 
 to verify the otp hit the url http://localhost:8000/users/1/codes/<otp>
-if you pass wrond otp then it will not return success status
+if you pass wrong otp then it will not return success status
   
 now run the web application and hit the url http://localhost:9000 and enter the email and password then it will ask for the otp. put the otp and acess the resource
 
