@@ -1,4 +1,4 @@
-package com.hs.authorizationserver;
+package com.hs.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,6 +12,8 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
+
+import com.hs.token.CustomTokenEnhancer;
 
 @Configuration
 public class OAuth2Config extends AuthorizationServerConfigurerAdapter {

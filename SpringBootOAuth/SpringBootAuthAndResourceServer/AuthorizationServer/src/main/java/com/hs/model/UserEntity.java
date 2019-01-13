@@ -1,4 +1,4 @@
-package com.hs.authorizationserver;
+package com.hs.model;
 
 import java.util.ArrayList;
 import java.util.Collection;

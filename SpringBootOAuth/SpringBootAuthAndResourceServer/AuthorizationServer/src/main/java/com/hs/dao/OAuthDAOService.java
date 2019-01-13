@@ -1,4 +1,4 @@
-package com.hs.authorizationserver;
+package com.hs.dao;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -10,6 +10,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Repository;
+
+import com.hs.model.UserEntity;
 
 @Repository
 public class OAuthDAOService {

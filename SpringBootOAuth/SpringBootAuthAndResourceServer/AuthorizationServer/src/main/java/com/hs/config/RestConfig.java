@@ -1,4 +1,4 @@
-package com.hs.authorizationserver;
+package com.hs.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

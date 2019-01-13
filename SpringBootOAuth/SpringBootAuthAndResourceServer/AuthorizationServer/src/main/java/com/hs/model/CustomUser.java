@@ -1,4 +1,4 @@
-package com.hs.authorizationserver;
+package com.hs.model;
 
 import org.springframework.security.core.userdetails.User;
 

@@ -1,4 +1,4 @@
-package com.hs.authorizationserver;
+package com.hs;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

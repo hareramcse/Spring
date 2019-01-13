@@ -1,10 +1,14 @@
-package com.hs.authorizationserver;
+package com.hs.userdetails;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import com.hs.dao.OAuthDAOService;
+import com.hs.model.CustomUser;
+import com.hs.model.UserEntity;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {

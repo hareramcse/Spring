@@ -1,4 +1,4 @@
-package com.hs.authorizationserver;
+package com.hs.token;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -7,6 +7,8 @@ import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
 import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+
+import com.hs.model.CustomUser;
 
 public class CustomTokenEnhancer extends JwtAccessTokenConverter {
 
