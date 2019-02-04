@@ -4,18 +4,17 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.hs</groupId>
-	<artifactId>SpringBootHateos</artifactId>
+	<artifactId>SpringBootVersioning</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>SpringBootHateos</name>
+	<name>SpringBootVersioning</name>
 	<description>Spring Boot 2 and REST - Example Project</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.0.RELEASE</version>
-		
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
@@ -37,10 +36,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-hateoas</artifactId>
 		</dependency>
 
 		<dependency>
