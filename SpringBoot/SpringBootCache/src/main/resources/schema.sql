@@ -1,0 +1,1 @@
+create table item(id int primary key, name varchar(20), category varchar(20));
