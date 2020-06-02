@@ -6,11 +6,6 @@ import org.springframework.web.context.request.RequestAttributes;
 
 import java.util.Map;
 
-/**
- * 
- * @author vthati
- *
- */
 @Component
 public class CustomErrorAttributes extends DefaultErrorAttributes {
 

@@ -3,11 +3,6 @@ package com.ratelimiter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * 
- * @author vthati
- *
- */
 @SpringBootApplication
 public class RatelimiterApplication {
 

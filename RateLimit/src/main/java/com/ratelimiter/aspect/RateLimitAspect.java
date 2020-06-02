@@ -14,11 +14,6 @@ import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
-/**
- * 
- * @author vthati
- *
- */
 @Component
 @Aspect
 public class RateLimitAspect {

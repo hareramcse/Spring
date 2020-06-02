@@ -8,11 +8,6 @@ import com.ratelimiter.annotation.RateLimit;
 import javax.servlet.http.HttpServletRequest;
 import java.util.concurrent.TimeUnit;
 
-/**
- * 
- * @author vthati
- *
- */
 @RestController
 public class HelloController {
 	
