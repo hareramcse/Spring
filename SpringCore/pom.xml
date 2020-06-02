@@ -6,7 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<org.springframework-version>4.3.7.RELEASE</org.springframework-version>
+		<org.springframework-version>5.2.6.RELEASE</org.springframework-version>
 		<aspectj.version>1.7.4</aspectj.version>
 	</properties>
 
