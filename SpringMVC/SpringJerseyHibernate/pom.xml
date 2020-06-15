@@ -22,7 +22,7 @@
 
 	<properties>
 		<jersey.version>2.12</jersey.version>
-		<spring.version>4.1.0.RELEASE</spring.version>
+		<spring.version>5.2.7.RELEASE</spring.version>
 		<jersey.scope>compile</jersey.scope>
 		<compileSource>1.7</compileSource>
 		<maven.compiler.target>1.7</maven.compiler.target>
